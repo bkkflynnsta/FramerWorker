@@ -23,15 +23,11 @@ struct FrameWorkerGridView: View {
                     }
                 }
                 .navigationTitle("🍎 Frameworks")
+                // option to convert "sheet" to "full screen" - replace .sheet with .fullScreenCover - leave attributes
                 .sheet(isPresented: $viewModel.isShowingDetail) {
                     FrameWorkerDetailView(framework: viewModel.selectedFrameWorker ?? MockData.sampleFramework,
                                           isShowingDetailView: $viewModel.isShowingDetail, isShowingSafariView: false)
                 }
-                // option to convert "sheet" to "full screen"
-//                .fullScreenCover(isPresented: $viewModel.isShowingDetail) {
-//                    FrameWorkerDetailView(framework: viewModel.selectedFrameWorker ?? MockData.sampleFramework,
-//                                          isShowingDetailView: $viewModel.isShowingDetail, isShowingSafariView: false)
-//                }
             }
         }
     }
